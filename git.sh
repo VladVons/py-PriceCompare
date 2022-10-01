@@ -26,10 +26,6 @@ Clean()
   echo "Statistics *.py"
   #find . -name '*.py' -ls | awk '{total += $7} END {print total}'
   find . -name '*.py' | xargs wc
-
-  echo
-  echo "Statistics *.json"
-  find . -name '*.json' | xargs wc
 }
 
 GitAuth()
