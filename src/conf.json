@@ -1,0 +1,159 @@
+{
+    "DirPrice": "./Data/Price",
+    "DirConf": "./Data/Conf",
+    "Resultes": ["xml"],
+    "Matches": 1,
+    "Common": {
+        "USD": 37.1,
+        "Plugin": [
+            {
+                "Class": "HasMpnPrice"
+            },
+            {
+                "Class": "UsdToLocal"
+            }
+        ],
+        "OnEnter": ["HasMpnPrice", "WordsSkip"],
+        "OnExit": ["UsdToLocal"]
+    },
+    "Result": {
+        "Order": ["brain.com.ua.stock.json", "brain.com.ua.xlsx", "dclink.ua.xlsx", "kts.ua.csv", "tdb.ua.xlsx", "chip.biz.ua.xls"],
+        "Type": {
+            "xlsx": {
+                "File": "./Data/OsterFinal.xlsx",
+                "Links": false,
+                "Ratio": false,
+                "Format": "#,#0.0",
+                "HeadLen": {
+                    "Mpn": 20, 
+                    "Name": 60, 
+                    "Category": 30,
+                    "Vendor": 25
+                }
+            },
+            "xml": {
+                "File": "./Data/OsterFinal.xml"
+            }
+        } 
+    },
+    "Vendor": {
+        "kts.ua.csv": {
+            "Encoding": "cp1251",
+            "Skip": 1,
+            "Fields": {
+                "Mpn": [2, "str"],
+                "Code": [1, "str"],
+                "Name": [4, "str"],
+                "Price": [5, "float"],
+                "PriceUSD": [6, "float"],
+                "Category": [3, "str"]
+            }
+        },
+        "chip.biz.ua.xls": {
+            "Skip": 30,
+            "Fields": {
+                "Mpn": [3, "str"],
+                "Code": [2, "str"],
+                "Name": [5, "str"],
+                "Price": [13, "float"],
+                "PriceUSD": [12, "float"]
+            }
+        },
+        "tdb.ua.xlsx": {
+            "Skip": 3,
+            "Fields": {
+                "Mpn": [4, "str"],
+                "Code": [1, "str"],
+                "Name": [5, "str"],
+                "PriceUSD": [7, "float"],
+                "Category": [2, "str"]
+            }
+        },
+        "kpi-market.com.xls": {
+            "Skip": 11,
+            "Fields": {
+                "Mpn": [1, "str"],
+                "Name": [2, "str"],
+                "PriceUSD": [3, "float"]
+            }
+        },
+        "erc.ua.kiev.xlsx": {
+            "Skip": 2,
+            "Fields": {
+                "Mpn": [4, "str"],
+                "Name": [5, "str"],
+                "Price": [7, "float"],
+                "Category": [2, "str"],
+                "Currency": [10, "str"]
+            },
+            "Plugin": [
+                {
+                    "Class": "ErcUa_Price"
+                }
+            ],
+            "OnExit": ["ErcUa_Price"]
+        },
+        "erc.ua.lviv.xlsx": {
+            "VendorRef": "erc.ua.kiev.xlsx"
+        },
+        "dclink.ua.xlsx": {
+            "Skip": 3,
+            "Fields": {
+                "Mpn": [4, "str"],
+                "Code": [5, "str"],
+                "Name": [6, "str"],
+                "Price": [9, "float"],
+                "Category": [1, "str"]
+            },
+            "OnExit": []
+        },
+        "brain.com.ua.xlsx": {
+            "Skip": 1,
+            "Fields": {
+                "Mpn": [4, "str"],
+                "Code": [2, "str"],
+                "Name": [7, "str"],
+                "PriceUSD": [9, "float"],
+                "Category": [3, "str"]
+            }
+        },
+        "brain.com.ua-test.ods": {
+            "Skip": 1,
+            "Fields": {
+                "Mpn": [4, "str"],
+                "Code": [2, "str"],
+                "Name": [7, "str"],
+                "PriceUSD": [9, "float"],
+                "Category": [3, "str"],
+                "CategoryCode": [22, "str"]
+            }
+        },
+        "brain.com.ua.stock.json": {
+            "Module": "json_brain",
+            "Fields": {
+                "Mpn": ["Article", "str"],
+                "Code": ["ProductID", "str"],
+                "Name": ["Name", "str"],
+                "Price": ["PriceUAH", "float"],
+                "Category": ["CategoryName", "str"],
+                "CategoryCode": ["CategoryID", "str"],
+                "Parent": ["ClassName", "str"],
+                "ParentCode": ["ClassID", "str"]
+            }
+        },
+        "brain.com.ua.all.json": {
+            "Module": "json_brain",
+            "Fields": {
+                "Mpn": ["Article", "str"],
+                "Code": ["ProductID", "str"],
+                "Name": ["Name", "str"],
+                "PriceUSD": ["PriceUSD", "float"],
+                "Category": ["CategoryName", "str"],
+                "CategoryCode": ["CategoryID", "str"],
+                "Parent": ["ClassName", "str"],
+                "ParentCode": ["ClassID", "str"],
+                "Available": ["Available", "int"]
+            }
+        }
+    }
+}
