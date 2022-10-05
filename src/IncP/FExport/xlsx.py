@@ -6,8 +6,8 @@ from openpyxl.utils import get_column_letter
 from openpyxl.styles import Font
 from openpyxl.comments import Comment
 #
-from Lib.DbList import TDbList, TDbRec
-from Lib.Common import GetNestedKey
+from Inc.DB.DbList import TDbList, TDbRec
+from Inc.Util.UObj import GetNestedKey
 from .FExport import TFExport
 
 

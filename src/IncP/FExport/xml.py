@@ -2,8 +2,8 @@ import logging
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 #
-from Lib.DbList import TDbList, TDbRec
-from Lib.Common import GetNestedKey
+from Inc.DB.DbList import TDbList, TDbRec
+from Inc.Util.UObj import GetNestedKey
 from .FExport import TFExport
 
 

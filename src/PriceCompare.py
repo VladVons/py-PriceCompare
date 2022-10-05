@@ -17,9 +17,11 @@ import json
 import time
 import logging
 #
-from Lib.DbList import TDbList
-from Lib.Common import DirGetFiles, DynImport, GetNestedKey
-from Lib.Plugin.Plugin import DynClass
+from Inc.DB.DbList import TDbList
+from Inc.Util.UObj import GetNestedKey
+from Inc.Util.UMod import DynImport
+from IncP.Common import DirGetFiles
+from IncP.Plugin.Plugin import DynClass
 
 
 class TConf(dict):
@@ -90,7 +92,7 @@ class TParse():
         if (ConfVendor):
             TimeStart = time.time()
             Ext = ConfVendor.get('Module', Ext)
-            TClass = DynImport('Lib.FImport.' + Ext, 'TFImport_' + Ext)
+            TClass = DynImport('IncP.FImport.' + Ext, 'TFImport_' + Ext)
             if (TClass):
                 Class = TClass(ConfVendor)
                 Class.Load(aName)
@@ -127,7 +129,7 @@ class TParse():
 
     def Save(self, aDBl: list, aMatch: dict):
         for x in self.Conf.get('Resultes'):
-            TClass = DynImport('Lib.FExport.' + x, 'TFExport_' + x)
+            TClass = DynImport('IncP.FExport.' + x, 'TFExport_' + x)
             if (TClass):
                 Conf = self.Conf['Result']
                 Class = TClass(self, Conf)

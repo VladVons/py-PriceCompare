@@ -1,5 +1,5 @@
 import logging
-from Lib.Common import DynImport
+from Inc.Util.UMod import DynImport
 
 
 class TDynClass():
@@ -12,7 +12,7 @@ class TDynClass():
             Alias = Item.get('Alias', Class)
             Param = Item.get('Param', {})
             if (not self.Data.get(Alias)):
-                TClass = DynImport('Lib.Plugin.' + Class, 'T' + Class)
+                TClass = DynImport('IncP.Plugin.' + Class, 'T' + Class)
                 if (TClass):
                     Obj = TClass(self, Param)
                     Obj.Alias = Alias

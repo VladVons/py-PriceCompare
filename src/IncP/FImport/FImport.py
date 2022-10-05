@@ -1,5 +1,5 @@
-from Lib.DbList import TDbList
-from Lib.Plugin.Plugin import TPluginManager, DynClass
+from Inc.DB.DbList import TDbList
+from IncP.Plugin.Plugin import TPluginManager, DynClass
 
 
 class TFImport():

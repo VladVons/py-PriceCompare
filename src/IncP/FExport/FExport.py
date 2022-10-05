@@ -1,5 +1,5 @@
 import sys
-from Lib.DbList import TDbList, TDbRec
+from Inc.DB.DbList import TDbList, TDbRec
 
 
 class TFExport():

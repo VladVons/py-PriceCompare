@@ -1,4 +1,4 @@
-from Lib.DbList import TDbRec
+from Inc.DB.DbList import TDbRec
 from .Plugin import TPluginBase
 
 
